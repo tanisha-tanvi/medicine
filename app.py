@@ -17,7 +17,26 @@ from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout, Input
+# 1. Top imports
+import os
+import gdown
 
+
+# 2. Drive config & cached loader
+DRIVE_FILE_ID = "YOUR_FILE_ID_HERE"
+LOCAL_DATA_PATH = "data/medicine_dataset.csv"
+
+
+@st.cache_data(show_spinner="Downloading dataset from Google Drive...")
+def load_drive_dataset(file_id: str = DRIVE_FILE_ID, local_path: str = LOCAL_DATA_PATH) -> pd.DataFrame:
+    os.makedirs(os.path.dirname(local_path), exist_ok=True)
+    if not os.path.exists(local_path):
+        gdown.download(id=file_id, output=local_path, quiet=False)
+    return pd.read_csv(local_path)
+
+
+# 3. Use it in your app
+# df_large = load_drive_dataset()
 # ==========================================
 # PAGE CONFIG & DARK THEME STYLING
 # ==========================================
