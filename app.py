@@ -23,7 +23,7 @@ import gdown
 
 
 # 2. Drive config & cached loader
-DRIVE_FILE_ID = "YOUR_FILE_ID_HERE"
+DRIVE_FILE_ID = "https://drive.google.com/file/d/1UBb58a8mkMDBEbaCsAeXTWYJNvrPQGE6/view?usp=sharing"
 LOCAL_DATA_PATH = "data/medicine_dataset.csv"
 
 
