@@ -1,0 +1,24 @@
+# Local data folder & large datasets
+data/
+*.csv
+*.csv.gz
+*.zip
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Streamlit & Jupyter local files
+.streamlit/secrets.toml
+.ipynb_checkpoints/
+
+# Environment variables & OS files
+.env
+.DS_Store
+Thumbs.db
